@@ -1,9 +1,9 @@
-#!/usr/lib/python3
-
+#!/usr/bin/python3
 import os
 import argparse
 import colorama
 from colorama import Fore, Back, Style
+import subprocess
 
 def write_username_once():
     # Define the flag file and user file paths
@@ -13,7 +13,7 @@ def write_username_once():
     # Check if the flag file exists
     if not os.path.exists(flag):
         # If the flag file doesn't exist, prompt for the username
-        print("username of os")
+        print("Enter your username:")
         user = input("username: ")
 
         # Write the username to the user file
@@ -34,7 +34,7 @@ def write_username_once():
 
 def handle_su():
     # Handle the su subcommand
-    new_user = input(Fore.BLUE + "new username: ")
+    new_user = input(Fore.BLUE + "Enter new username: ")
     pwd = os.path.expanduser("~/.x/xs/user.txt")
 
     # Remove the existing user file
@@ -45,10 +45,12 @@ def handle_su():
     with open(pwd, 'w') as f:
         f.write(new_user + "\n")
 
-    print(Fore.Blue + f"user changed to '{new_user}'")
+    print(Fore.BLUE + f"User changed to '{new_user}'")
 
 def main():
     try:
+        colorama.init()  # Initialize colorama for colored output
+
         # Create the top-level parser
         parser = argparse.ArgumentParser(description='Switch User For X')
         parser.add_argument('-su', action='store_true', help='Switch User')
@@ -62,11 +64,15 @@ def main():
             # Default action if no subcommand is provided
             user = write_username_once()
             # Execute other commands using the username
-            os.system("rm zsh_history")
-            os.system("clear")
-            os.system("pkill -KILL -u " + user)
+            subprocess.run(["rm", "zsh_history"])
+            subprocess.run(["clear"])
+            subprocess.run(["pkill", "-KILL", "-u", user])
+    
     except KeyboardInterrupt:
         print("\nOperation cancelled by user. Exiting...")
+    
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()
