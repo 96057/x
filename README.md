@@ -3,7 +3,7 @@ this is an emergancy button that deletes ur zsh history. this is not a final pro
 it is compatible for:
 zsh - kali linux 2024
 
-[git clone  ](url)
+[git clone  https://github.com/96057/x.git](url)
 
 [cd x](url)
 
