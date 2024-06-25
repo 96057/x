@@ -8,7 +8,7 @@ import subprocess
 def write_username_once():
     # Define the flag file and user file paths
     flag = os.path.expanduser("~/x/xs/flag.flag")
-    user_file = os.path.expanduser("~/.x/xs/user.txt")
+    user_file = os.path.expanduser("~/x/xs/user.txt")
 
     # Check if the flag file exists
     if not os.path.exists(flag):
@@ -35,7 +35,7 @@ def write_username_once():
 def handle_su():
     # Handle the su subcommand
     new_user = input(Fore.BLUE + "Enter new username: ")
-    pwd = os.path.expanduser("~/.x/xs/user.txt")
+    pwd = os.path.expanduser("~/x/xs/user.txt")
 
     # Remove the existing user file
     if os.path.exists(pwd):
