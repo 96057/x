@@ -12,6 +12,8 @@ os.system("pip install -r requirements.txt")
 os.system("sudo chmod +x x")
 os.system("sudo chmod 700 x")
 os.system("sudo chmod 755 x")
+os.system("touch ~/x/xs/user.txt")
+os.system("touch ~/x/xs/flag.flag")
 os.system("sudo cp x /bin/")
 os.system("clear")
 print("""
