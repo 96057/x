@@ -3,19 +3,19 @@ this is an emergancy button that deletes ur zsh history. this is not a final pro
 it is compatible for:
 zsh - kali linux 2024
 
-[git clone  https://github.com/96057/x.git](url)
+```git clone  https://github.com/96057/x.git```
 
-[cd x](url)
+```cd x```
 
-[chmod +x xsetup.py](url)
+```chmod +x xsetup.py```
 
-[python3 xsetup.py](url)
+```python3 xsetup.py```
 
-[x -h](url)
+```x -h```
 
-[x](url)
+```x```
 put you'r full os username.
 
 you can change you'r username by:
-[x -su](url)
-[](url)
+```x -su```
+
