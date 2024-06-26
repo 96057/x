@@ -6,8 +6,6 @@ ans = input("Do you wish do update and upgrade Your OS? y/n ")
 if ans == 'y':
         os.system("sudo apt update")
         os.system("sudo apt upgrade -y")
-os.system("sudo apt install python3 -y")
-os.system("sudo apt install python3-pip -y")
 os.system("pip install -r requirements.txt")
 os.system("sudo chmod +x x")
 os.system("sudo chmod 700 x")
