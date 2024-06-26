@@ -14,7 +14,7 @@ zsh - kali linux and Ubuntu 2024
 ```x -h```
 
 ```x```
-put you'r full os username.
+put you'r UNIX username.
 
 you can change you'r username by:
 ```x -su```
